@@ -4,6 +4,10 @@
 
 // TS ders-2
 
+let b: number
+
+b="Hello"
+
 //& Intersection
 
 type Book = {
