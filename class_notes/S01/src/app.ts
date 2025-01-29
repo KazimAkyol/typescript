@@ -150,9 +150,37 @@
 
 //!!! String Literals
 
+// type Pet = "cat" | "Dog" | "Bird";
 
+// let l: Pet = "cat";
+// let m: Pet = "Bird";
+// let n: Pet = "snake";
 
 //!!! Intersection
+
+//! Objects
+
+const car: {
+  readonly type: string;
+  model: string;
+  year: number;
+  age(year: number): void;
+} = {
+  model: "Corolla",
+  type: "Toyota",
+  year: 2009,
+  age(year: number): void {
+    console.log(`Age is ${year - 2009} `);
+  },
+};
+
+console.log(car.type);
+
+car.year = 2010;
+
+console.log(car.model);
+
+console.log(car.age(2025));
 
 // type Book = {
 //   book_id: number;
@@ -181,7 +209,7 @@
 // console.log((<string>str).length);
 // console.log(str.length);
 
-//& Functions
+//!!! Functions
 
 // function selamla(mesaj: string, isim: string): void {
 //   console.log(`${mesaj} ${isim}`);
@@ -222,7 +250,7 @@
 //     return `${mesaj} ${isim}`;
 //   };
 
-//^ Overloading
+//!!! Overloading
 
 // function add(a: string, b: string): string;
 // function add(a: number, b: number): number;
@@ -233,7 +261,7 @@
 // console.log(add(1, 2));
 // console.log(add("Hello", "World"));
 
-//^ Rest Parameters
+//!!! Rest Parameters
 
 // function topla(sayi1: number, ...sayilar: number[]): number {
 //   let toplam = sayi1;
