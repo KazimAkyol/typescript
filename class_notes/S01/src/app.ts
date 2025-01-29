@@ -108,13 +108,49 @@
 
 //!!! Unknown
 
-let d: unknown = 5;
+// let d: unknown = 5;
 
-let e: number = d;
+// let e: number = d;
 
-let f: any = d;
+// let f: any = d;
 
-let g: number = d as number;
+// let g: number = d as number;
+
+// let h: number = d;
+
+//!!! Void
+
+// function warnUser(): void {
+//   console.log("Hello World");
+// }
+
+//!!! Never
+
+// function error(message: string): never {
+//   throw new Error(message);
+// }
+
+//!!! Union
+
+// let a: boolean | string = "hello";
+
+// a = 5;
+
+// a = true;
+
+//!!! Type Aliases
+
+// type Kombine = number | string;
+
+// let k: Kombine = "Selam";
+
+// k = 42;
+
+// k = true;
+
+//!!! String Literals
+
+
 
 //!!! Intersection
 
@@ -137,7 +173,7 @@ let g: number = d as number;
 //   Author_id: 1892,
 // };
 
-//& Type Assertions
+//!!! Type Assertions
 
 // let str: unknown = "Hello World";
 

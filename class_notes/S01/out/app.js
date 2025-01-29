@@ -1,4 +1,3 @@
-let d = 5;
-d = "Merhaba";
-d = false;
-let arr2 = [1, "Admin", true];
+let k = "Selam";
+k = 42;
+k = true;
