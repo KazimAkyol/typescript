@@ -2,32 +2,71 @@
 
 // const a = (b, c) => b * c; // Bu kod iki rakami carpar
 
-// TS ders-2
+//!!! TS ders-2
 
-let b: number
+// let b: number;
 
-b="Hello"
+// b = 7;
 
-//& Intersection
+// let c: number = 42;
 
-type Book = {
-  book_id: number;
-  book_name: string;
-};
+// c = 3.14;
 
-type Author = {
-  Author_id: number;
-  Author_name: string;
-};
+// let d: string = "Selam";
 
-type Sales = Book & Author;
+// d = 25;
 
-let sales1: Sales = {
-  Author_name: "J.R.R. Tolkien",
-  book_name: "Lord of the Rings",
-  book_id: 1234,
-  Author_id: 1892,
-};
+// let e: boolean = false;
+
+// e = 5;
+
+// e = "true";
+
+// e = true;
+
+//!!! Arrays
+
+// let list1: number[] = [1, 2, 3];
+
+// list1.push(4);
+
+// list1.push("Ahmet");
+
+// console.log(list1);
+
+// let list2: Array<string> = ["a", "b"];
+
+// list2.push("c");
+// list2.push(2);
+
+//!!! Tuples
+
+let myTuple1: [number, boolean, string];
+
+myTuple1 = [1, true, "mark"];
+
+console.log(myTuple1);
+
+//!!! Intersection
+
+// type Book = {
+//   book_id: number;
+//   book_name: string;
+// };
+
+// type Author = {
+//   Author_id: number;
+//   Author_name: string;
+// };
+
+// type Sales = Book & Author;
+
+// let sales1: Sales = {
+//   Author_name: "J.R.R. Tolkien",
+//   book_name: "Lord of the Rings",
+//   book_id: 1234,
+//   Author_id: 1892,
+// };
 
 //& Type Assertions
 
@@ -91,13 +130,13 @@ let sales1: Sales = {
 
 //^ Rest Parameters
 
-function topla(sayi1: number, ...sayilar: number[]): number {
-  let toplam = sayi1;
-  sayilar.forEach((sayi) => toplam + sayi);
-  return toplam;
-}
+// function topla(sayi1: number, ...sayilar: number[]): number {
+//   let toplam = sayi1;
+//   sayilar.forEach((sayi) => toplam + sayi);
+//   return toplam;
+// }
 
-console.log(topla(1));
-console.log(topla(2, 3, 4, 5, 6));
-console.log(topla(7, 9, 100));
-console.log(topla(5, 10, 20, 30, 40, 50));
+// console.log(topla(1));
+// console.log(topla(2, 3, 4, 5, 6));
+// console.log(topla(7, 9, 100));
+// console.log(topla(5, 10, 20, 30, 40, 50));
