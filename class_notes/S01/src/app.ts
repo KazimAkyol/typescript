@@ -156,50 +156,50 @@
 // let m: Pet = "Bird";
 // let n: Pet = "snake";
 
+//!!! Objects
+
+// const car: {
+//   readonly type: string;
+//   model: string;
+//   year: number;
+//   age(year: number): void;
+// } = {
+//   model: "Corolla",
+//   type: "Toyota",
+//   year: 2009,
+//   age(year: number): void {
+//     console.log(`Age is ${year - 2009} `);
+//   },
+// };
+
+// console.log(car.type);
+
+// car.year = 2010;
+
+// console.log(car.model);
+
+// console.log(car.age(2025));
+
 //!!! Intersection
 
-//! Objects
-
-const car: {
-  readonly type: string;
-  model: string;
-  year: number;
-  age(year: number): void;
-} = {
-  model: "Corolla",
-  type: "Toyota",
-  year: 2009,
-  age(year: number): void {
-    console.log(`Age is ${year - 2009} `);
-  },
+type Book = {
+  book_id: number;
+  book_name: string;
 };
 
-console.log(car.type);
+type Author = {
+  Author_id: number;
+  Author_name: string;
+};
 
-car.year = 2010;
+type Sales = Book & Author;
 
-console.log(car.model);
-
-console.log(car.age(2025));
-
-// type Book = {
-//   book_id: number;
-//   book_name: string;
-// };
-
-// type Author = {
-//   Author_id: number;
-//   Author_name: string;
-// };
-
-// type Sales = Book & Author;
-
-// let sales1: Sales = {
-//   Author_name: "J.R.R. Tolkien",
-//   book_name: "Lord of the Rings",
-//   book_id: 1234,
-//   Author_id: 1892,
-// };
+let sales1: Sales = {
+  Author_name: "J.R.R. Tolkien",
+  book_name: "Lord of the Rings",
+  book_id: 1234,
+  Author_id: 1892,
+};
 
 //!!! Type Assertions
 
