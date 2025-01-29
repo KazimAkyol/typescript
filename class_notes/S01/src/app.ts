@@ -182,32 +182,32 @@
 
 //!!! Intersection
 
-type Book = {
-  book_id: number;
-  book_name: string;
-};
+// type Book = {
+//   book_id: number;
+//   book_name: string;
+// };
 
-type Author = {
-  Author_id: number;
-  Author_name: string;
-};
+// type Author = {
+//   Author_id: number;
+//   Author_name: string;
+// };
 
-type Sales = Book & Author;
+// type Sales = Book & Author;
 
-let sales1: Sales = {
-  Author_name: "J.R.R. Tolkien",
-  book_name: "Lord of the Rings",
-  book_id: 1234,
-  Author_id: 1892,
-};
+// let sales1: Sales = {
+//   Author_name: "J.R.R. Tolkien",
+//   book_name: "Lord of the Rings",
+//   book_id: 1234,
+//   Author_id: 1892,
+// };
 
 //!!! Type Assertions
 
-// let str: unknown = "Hello World";
+let str: unknown = "Hello World";
 
-// console.log((str as string).length);
-// console.log((<string>str).length);
-// console.log(str.length);
+console.log((str as string).length);
+console.log((<string>str).length); // generic tip
+console.log(str.length);
 
 //!!! Functions
 
