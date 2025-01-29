@@ -41,24 +41,80 @@
 
 //!!! Tuples
 
-let myTuple1: [number, boolean, string];
+// let myTuple1: [number, boolean, string];
 
-myTuple1 = [1, true, "mark"];
+// myTuple1 = [1, true, "mark"];
 
-console.log(myTuple1);
+// console.log(myTuple1);
 
-let sinif: [number, string][];
+// let sinif: [number, string][];
 
-sinif = [
-  [1, "Gökhan"],
-  [2, "Kazim"],
-  [3, "Muhterem"],
-  [4, "Mark"],
-];
+// sinif = [
+//   [1, "Gökhan"],
+//   [2, "Kazim"],
+//   [3, "Muhterem"],
+//   [4, "Mark"],
+// ];
 
-sinif.push([5, "Fatma"]);
+// sinif.push([5, "Fatma"]);
 
-console.log(sinif);
+// console.log(sinif);
+
+//!!! enum
+
+// const enum Role {
+//   User = 10,
+//   Admin = User * 2,
+//   Guest,
+// }
+
+// enum Role2 {
+//   User = 10,
+//   Admin = User * 2,
+//   Guest,
+//   DBAdmin,
+// }
+
+// console.log("Role enum" + Role.User);
+// console.log(Role2.Admin);
+
+// enum StatusCode {
+//   Notfound = 404,
+//   Success = 200,
+//   Accepted = 202,
+//   BadRequest = 400,
+// }
+
+// console.log(StatusCode.Accepted);
+
+// const enum Tshirt {
+//   Small = "S",
+//   Medium = "M",
+//   Large = "L",
+//   Xlarge = 42,
+//   XXLarge = Xlarge + 2,
+//   XXXLarge,
+// }
+
+// console.log(Tshirt.XXLarge);
+
+//!!! Any Type
+
+// let d: any = 5;
+// d = "Merhaba";
+// d = false;
+
+// let arr2: any[] = [1, "Admin", true];
+
+//!!! Unknown
+
+let d: unknown = 5;
+
+let e: number = d;
+
+let f: any = d;
+
+let g: number = d as number;
 
 //!!! Intersection
 
