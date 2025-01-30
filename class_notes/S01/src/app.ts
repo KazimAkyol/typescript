@@ -203,29 +203,29 @@
 
 //!!! Type Assertions
 
-let str: unknown = "Hello World";
+// let str: unknown = "Hello World";
 
-console.log((str as string).length);
-console.log((<string>str).length); // generic tip
-console.log(str.length);
+// console.log((str as string).length);
+// console.log((<string>str).length); // generic tip
+// console.log(str.length);
 
 //!!! Functions
 
-// function selamla(mesaj: string, isim: string): void {
-//   console.log(`${mesaj} ${isim}`);
-// }
+function selamla(mesaj: string, isim: string): void {
+  console.log(`${mesaj} ${isim}`);
+}
 
-// selamla("Günaydin", "Mark");
-// selamla("Günaydin");
-// selamla("Günaydin", "Mark", "Nasilsin?");
+selamla("Günaydin", "Mark");
+selamla("Günaydin");
+selamla("Günaydin", "Mark", "Nasilsin?");
 
-// function selamla2(mesaj: string, isim: string): void {
-//   console.log(`${mesaj} ${isim}`);
-// }
+function selamla2(mesaj: string, isim: string): void {
+  console.log(`${mesaj} ${isim}`);
+}
 
-// selamla2("Günaydin", "Mark");
-// selamla2("Günaydin");
-// selamla2("Günaydin", "Mark", "Nasilsin?");
+selamla2("Günaydin", "Mark");
+selamla2("Günaydin");
+selamla2("Günaydin", "Mark", "Nasilsin?");
 
 // function selamla2(mesaj: string, isim: string): void {
 //   if (!isim) isim = "Misafir Kullanici";

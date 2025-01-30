@@ -1,4 +1,6 @@
-let str = "Hello World";
-console.log(str.length);
-console.log(str.length);
-console.log(str.length);
+function selamla(mesaj, isim) {
+    console.log(`${mesaj} ${isim}`);
+}
+selamla("Günaydin", "Mark");
+selamla("Günaydin");
+selamla("Günaydin", "Mark", "Nasilsin?");
