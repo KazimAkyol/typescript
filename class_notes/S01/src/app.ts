@@ -211,23 +211,23 @@
 
 //!!! Functions
 
-function selamla(mesaj: string, isim: string): void {
-  console.log(`${mesaj} ${isim}`);
-}
+// function selamla(mesaj: string, isim: string): void {
+//   console.log(`${mesaj} ${isim}`);
+// }
 
-selamla("Günaydin", "Mark");
-selamla("Günaydin");
-selamla("Günaydin", "Mark", "Nasilsin?");
+// selamla("Günaydin", "Mark");
+// selamla("Günaydin");
+// selamla("Günaydin", "Mark", "Nasilsin?");
 
-function selamla2(mesaj: string, isim: string): void {
-  console.log(`${mesaj} ${isim}`);
-}
+// function selamla2(mesaj: string, isim?: string): void {
+//   console.log(`${mesaj} ${isim}`);
+// }
 
-selamla2("Günaydin", "Mark");
-selamla2("Günaydin");
-selamla2("Günaydin", "Mark", "Nasilsin?");
+// selamla2("Günaydin", "Mark");
+// selamla2("Günaydin");
+// selamla2("Günaydin", "Mark", "Nasilsin?");
 
-// function selamla2(mesaj: string, isim: string): void {
+// function selamla2(mesaj: string, isim?: string): void {
 //   if (!isim) isim = "Misafir Kullanici";
 //   console.log(`${mesaj} ${isim}`);
 // }
@@ -244,11 +244,13 @@ selamla2("Günaydin", "Mark", "Nasilsin?");
 // selamla3("Günaydin");
 // selamla3("Günaydin", "Mark", "Nasilsin?");
 
-// let selamla4 =
-//   () =>
-//   (mesaj: string, isim: string): string => {
-//     return `${mesaj} ${isim}`;
-//   };
+//!!! Arrow function
+
+let selamla4 =
+  () =>
+  (mesaj: string, isim: string): string => {
+    return `${mesaj} ${isim}`;
+  };
 
 //!!! Overloading
 
