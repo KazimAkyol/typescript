@@ -77,18 +77,53 @@
 
 //!!! Interfaces
 
-interface Calender {
-  events: string[];
-  addEvents(event: string): void;
+// interface Calender {
+//   events: string[];
+//   addEvents(event: string): void;
+// }
+
+// class LMSCalender implements Calender {
+//   constructor(public events: string[]) {}
+
+//   addEvents(event: string): void {
+//     this.events.push(event);
+//   }
+// }
+
+// const de10 = new LMSCalender(["HTML", "React", "Typescript"]);
+// const de11 = new LMSCalender(["HTML", "React"]);
+
+//!!! Generics
+
+//! Generic Interfaces
+
+interface Result<T> {
+  data: T | null;
 }
 
-class LMSCalender implements Calender {
-  constructor(public events: string[]) {}
+//! Generic Function
 
-  addEvents(event: string): void {
-    this.events.push(event);
-  }
+function wrapInArr<T>(value: T) {
+  return [value];
 }
 
-const de10 = new LMSCalender(["HTML", "React", "Typescript"]);
-const de11 = new LMSCalender(["HTML", "React"]);
+let arr = wrapInArr(1);
+
+//! Generic Classes
+
+class KeyValuePair<K, V> {
+  constructor(public key: K, public value: V) {}
+}
+
+let kvp = new KeyValuePair<number, string>(1, "a");
+let shorter = new KeyValuePair(1, "a");
+
+//! Multiple generic parameter example
+
+function displayType<T, U>(param1: T, param2: U) {
+  console.log(`param1:${typeof param1}, param2:${typeof param2}`);
+}
+
+displayType<number, string>(34, "Istanbul");
+displayType<string, number>("Price", 250);
+displayType(console.log, 5 > 8);
