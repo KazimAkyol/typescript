@@ -74,3 +74,21 @@
 // employee1.displayName()
 
 // let Person1 = new Person ("mark")
+
+//!!! Interfaces
+
+interface Calender {
+  events: string[];
+  addEvents(event: string): void;
+}
+
+class LMSCalender implements Calender {
+  constructor(public events: string[]) {}
+
+  addEvents(event: string): void {
+    this.events.push(event);
+  }
+}
+
+const de10 = new LMSCalender(["HTML", "React", "Typescript"]);
+const de11 = new LMSCalender(["HTML", "React"]);
