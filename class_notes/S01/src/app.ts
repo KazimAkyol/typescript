@@ -254,24 +254,24 @@
 
 //!!! Overloading
 
-function add(a: string, b: string): string;
-function add(a: number, b: number): number;
-function add(a: any, b: any): any {
-  return a + b;
-}
+// function add(a: string, b: string): string;
+// function add(a: number, b: number): number;
+// function add(a: any, b: any): any {
+//   return a + b;
+// }
 
-console.log(add(1, 2));
-console.log(add("Hello", "World"));
+// console.log(add(1, 2));
+// console.log(add("Hello", "World"));
 
 //!!! Rest Parameters
 
-// function topla(sayi1: number, ...sayilar: number[]): number {
-//   let toplam = sayi1;
-//   sayilar.forEach((sayi) => toplam + sayi);
-//   return toplam;
-// }
+function topla(sayi1: number, ...sayilar: number[]): number {
+  let toplam = sayi1;
+  sayilar.forEach((sayi) => (toplam += sayi));
+  return toplam;
+}
 
-// console.log(topla(1));
-// console.log(topla(2, 3, 4, 5, 6));
-// console.log(topla(7, 9, 100));
-// console.log(topla(5, 10, 20, 30, 40, 50));
+console.log(topla(1));
+console.log(topla(2, 3, 4, 5, 6));
+console.log(topla(7, 9, 100));
+console.log(topla(5, 10, 20, 30, 40, 50));

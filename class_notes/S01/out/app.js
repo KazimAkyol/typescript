@@ -1,5 +1,9 @@
-function add(a, b) {
-    return a + b;
+function topla(sayi1, ...sayilar) {
+    let toplam = sayi1;
+    sayilar.forEach((sayi) => (toplam += sayi));
+    return toplam;
 }
-console.log(add(1, 2));
-console.log(add("Hello", "World"));
+console.log(topla(1));
+console.log(topla(2, 3, 4, 5, 6));
+console.log(topla(7, 9, 100));
+console.log(topla(5, 10, 20, 30, 40, 50));
