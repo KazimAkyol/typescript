@@ -97,26 +97,26 @@
 
 //! Generic Interfaces
 
-interface Result<T> {
-  data: T | null;
-}
+// interface Result<T> {
+//   data: T | null;
+// }
 
 //! Generic Function
 
-function wrapInArr<T>(value: T) {
-  return [value];
-}
+// function wrapInArr<T>(value: T) {
+//   return [value];
+// }
 
-let arr = wrapInArr(1);
+// let arr = wrapInArr(1);
 
 //! Generic Classes
 
-class KeyValuePair<K, V> {
-  constructor(public key: K, public value: V) {}
-}
+// class KeyValuePair<K, V> {
+//   constructor(public key: K, public value: V) {}
+// }
 
-let kvp = new KeyValuePair<number, string>(1, "a");
-let shorter = new KeyValuePair(1, "a");
+// let kvp = new KeyValuePair<number, string>(1, "a");
+// let shorter = new KeyValuePair(1, "a");
 
 //! Multiple generic parameter example
 
@@ -127,3 +127,31 @@ function displayType<T, U>(param1: T, param2: U) {
 displayType<number, string>(34, "Istanbul");
 displayType<string, number>("Price", 250);
 displayType(console.log, 5 > 8);
+
+//!! Generics Utility Types
+
+//! Type Mapping
+
+// type ReadOnly<T> = {
+//   readonly [K in keyof T]: T[K];
+// };
+// type Optional<T> = {
+//   [K in keyof T]?: T[K];
+// };
+// type Nullable<T> = {
+//   [K in keyof T]: T[K] | null;
+// };
+
+//! Utility Types
+
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+// }
+
+// let product: Partial<Product>;
+// let product: Required<Product>;
+// let product: ReadOnly<Product>;
+// let product: Pick<Product, "id" | "price">;
+// let product: Omit<Product, "name">;
