@@ -5,5 +5,5 @@ interface ITodo {
 }
 
 type AddFn = (task: string) => Promise<void>;
-type ToggleFn = (todo: ITodoType) => Promise<void>;
+type ToggleFn = (todo: ITodo) => Promise<void>;
 type DeleteFn = (id: string | number) => Promise<void>;

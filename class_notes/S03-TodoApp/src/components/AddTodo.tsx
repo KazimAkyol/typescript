@@ -2,7 +2,11 @@ import { Save } from "@mui/icons-material";
 import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
-export default function AddTodo() {
+interface IAddTodoProps {
+  addTodo: AddFn;
+}
+
+export default function AddTodo({ addTodo }: IAddTodoProps) {
   // const [task, setTask] = useState<string>("")
   const [task, setTask] = useState("");
 
@@ -12,7 +16,8 @@ export default function AddTodo() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(task);
+    addTodo(task);
+    setTask("");
   };
 
   return (
@@ -37,6 +42,7 @@ export default function AddTodo() {
         }}
         // onChange={(e)=>console.log(e.target.value)}
         onChange={handleChange}
+        value={task}
       />
       <Button
         type="submit"

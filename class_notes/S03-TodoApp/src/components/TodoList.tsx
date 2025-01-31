@@ -5,9 +5,19 @@ import TodoItem from "./TodoItem";
 
 interface ITodoListProps {
   todos: ITodo[];
+  toggleTodo: ToggleFn;
 }
 
-const TodoList: React.FC<ITodoListProps> = ({ todos }) => {
+//* 3.yol React.FC kullanımı
+//! React.FC, bir functional component'i ifade eder. Bileşenin işlevsel bir yapıda olduğunu ve React tarafından kullanılabileceğini belirtir.
+
+//? React.FC, bileşenlere props tanımlamak ve JSX döndürmek için kullanılan bir genel tip (generic type) olarak kullanılır. Bu tip, bileşenin alacağı props'ların tipini belirtmek için kullanılır. Props'ların tipini belirtmek, bileşenin daha güvenli ve hatasız olmasını sağlar.
+
+//* Ancak, React.FC kullanmak zorunlu değildir. Fonksiyonel bir bileşen, sadece fonksiyon olarak da tanımlanabilir ve React.FC kullanmadan da props alabilir ve JSX döndürebilir.
+
+//+ FC, "FunctionComponent" kelimelerinin kısaltmasıdır.
+
+const TodoList: React.FC<ITodoListProps> = ({ todos, toggleTodo }) => {
   const inProgressTodos = todos.filter((todo) => !todo.isDone);
 
   return (
@@ -43,7 +53,7 @@ const TodoList: React.FC<ITodoListProps> = ({ todos }) => {
         </Typography>
         {inProgressTodos.length ? (
           inProgressTodos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
           ))
         ) : (
           <Typography color="error" mt={3}>

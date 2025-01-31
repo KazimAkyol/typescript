@@ -3,10 +3,11 @@ import { IconButton, ListItem, ListItemText } from "@mui/material";
 import React from "react";
 
 interface ITodoItemProps {
-  todos: ITodo;
+  todo: ITodo;
+  toggleTodo: ToggleFn;
 }
 
-export default function TodoItem({ todo }: ITodoItemProps) {
+export default function TodoItem({ todo, toggleTodo }: ITodoItemProps) {
   return (
     <ListItem
       disableGutters
