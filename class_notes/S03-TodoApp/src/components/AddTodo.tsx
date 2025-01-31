@@ -7,7 +7,7 @@ interface IAddTodoProps {
 }
 
 export default function AddTodo({ addTodo }: IAddTodoProps) {
-  // const [task, setTask] = useState<string>("");
+  // const [task, setTask] = useState<string>(""); //! her zaman type belirtmemize gerek yok. Typescript type inference özelliği sayesinde inital değerine göre otomatik type ataması yapıyor.
   const [task, setTask] = useState("");
 
   const handleChange = (

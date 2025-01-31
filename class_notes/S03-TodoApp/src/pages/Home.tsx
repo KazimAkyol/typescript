@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import AddTodo from "../components/AddTodo";
 import axios from "axios";
 import TodoList from "../components/TodoList";
+import { notify, SweetIcon } from "../helper/sweetAlert";
 
 // interface ITodo {
 //     task: string;
@@ -15,7 +16,9 @@ import TodoList from "../components/TodoList";
 const url = "https://64ecd95ff9b2b70f2bfb0943.mockapi.io/todos";
 
 export default function Home() {
-  const [todos, setTodos] = useState<ITodo[]>([]);
+  //   const [todos, setTodos] = useState([] as ITodoType[]);
+  //   const [todos, setTodos] = useState<Array<ITodoType>> ([]);
+  const [todos, setTodos] = useState<ITodo[]>([]); //* yaygin olan kullanim sekli
 
   const getTodos = async () => {
     try {
@@ -29,8 +32,10 @@ export default function Home() {
   const addTodo: AddFn = async (task) => {
     try {
       await axios.post(url, { task, isDone: false });
+      notify("Todo created", SweetIcon.SUCCESS);
       getTodos();
     } catch (error) {
+      notify("Todo not created!", SweetIcon.ERROR);
       console.log(error);
     }
   };
@@ -38,18 +43,22 @@ export default function Home() {
   const toggleTodo: ToggleFn = async (todo) => {
     try {
       await axios.put(`${url}/${todo.id}`, { ...todo, isDone: !todo.isDone });
+      notify("Todo updated", SweetIcon.SUCCESS);
       getTodos();
     } catch (error) {
       console.log(error);
+      notify("Todo not updated!", SweetIcon.ERROR);
     }
   };
 
   const deleteTodo: DeleteFn = async (id) => {
     try {
       await axios.delete(`${url}/${id}`);
+      notify("Todo deleted", SweetIcon.SUCCESS);
       getTodos();
     } catch (error) {
       console.log(error);
+      notify("Todo not deleted!", SweetIcon.ERROR);
     }
   };
 
