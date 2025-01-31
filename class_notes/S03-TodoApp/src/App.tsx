@@ -1,11 +1,11 @@
-
-
+import { Container } from "@mui/material";
+import Home from "./pages/Home";
 
 function App() {
- 
   return (
-   <h1>hi there</h1>
-
+    <Container>
+      <Home />
+    </Container>
   );
 }
 
