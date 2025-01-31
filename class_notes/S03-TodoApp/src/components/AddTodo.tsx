@@ -3,19 +3,23 @@ import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
 export default function AddTodo() {
+  // const [task, setTask] = useState<string>("")
+  const [task, setTask] = useState("");
 
-    // const [task, setTask] = useState<string>("")
-    const [task, setTask] = useState("")
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setTask(e.target.value);
 
-
-    const handleSubmit = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        console.log(e.target.value)
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(task);
+  };
 
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
+      //   onSubmit = {(e)=> console.log(e.target)}
       sx={{
         display: { xs: "block", sm: "flex" },
         justifyContent: { xs: "flex-start", sm: "center" },
@@ -32,8 +36,10 @@ export default function AddTodo() {
           m: 1,
         }}
         // onChange={(e)=>console.log(e.target.value)}
+        onChange={handleChange}
       />
       <Button
+        type="submit"
         variant="contained"
         endIcon={<Save />}
         color="success"
