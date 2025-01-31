@@ -6,6 +6,7 @@ import TodoItem from "./TodoItem";
 interface ITodoListProps {
   todos: ITodo[];
   toggleTodo: ToggleFn;
+  deleteTodo: DeleteFn;
 }
 
 //* 3.yol React.FC kullanımı
@@ -17,8 +18,13 @@ interface ITodoListProps {
 
 //+ FC, "FunctionComponent" kelimelerinin kısaltmasıdır.
 
-const TodoList: React.FC<ITodoListProps> = ({ todos, toggleTodo }) => {
+const TodoList: React.FC<ITodoListProps> = ({
+  todos,
+  toggleTodo,
+  deleteTodo,
+}) => {
   const inProgressTodos = todos.filter((todo) => !todo.isDone);
+  const completedTodos = todos.filter((todo) => todo.isDone);
 
   return (
     <Grid
@@ -53,7 +59,12 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, toggleTodo }) => {
         </Typography>
         {inProgressTodos.length ? (
           inProgressTodos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
           ))
         ) : (
           <Typography color="error" mt={3}>
@@ -81,9 +92,20 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, toggleTodo }) => {
         >
           Completed Todos
         </Typography>
-        <Typography color="error" mt={3}>
-          No Completed Todos!
-        </Typography>
+        {completedTodos.length ? (
+          completedTodos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))
+        ) : (
+          <Typography color="error" mt={3}>
+            No Completed Todos!
+          </Typography>
+        )}
       </Grid>
     </Grid>
   );

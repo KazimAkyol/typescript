@@ -5,9 +5,14 @@ import React from "react";
 interface ITodoItemProps {
   todo: ITodo;
   toggleTodo: ToggleFn;
+  deleteTodo: DeleteFn;
 }
 
-export default function TodoItem({ todo, toggleTodo }: ITodoItemProps) {
+export default function TodoItem({
+  todo,
+  toggleTodo,
+  deleteTodo,
+}: ITodoItemProps) {
   return (
     <ListItem
       disableGutters
@@ -17,11 +22,14 @@ export default function TodoItem({ todo, toggleTodo }: ITodoItemProps) {
       }}
       secondaryAction={
         <IconButton aria-label="coment">
-          <DeleteOutline sx={{ "&:hover": { color: "red" } }} />
+          <DeleteOutline
+            sx={{ "&:hover": { color: "red" } }}
+            onClick={() => deleteTodo(todo.id)}
+          />
         </IconButton>
       }
     >
-      <ListItemText primary={todo.task} />
+      <ListItemText onClick={() => toggleTodo(todo)} primary={todo.task} />
     </ListItem>
   );
 }

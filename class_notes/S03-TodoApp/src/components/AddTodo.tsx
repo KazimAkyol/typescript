@@ -7,7 +7,7 @@ interface IAddTodoProps {
 }
 
 export default function AddTodo({ addTodo }: IAddTodoProps) {
-  // const [task, setTask] = useState<string>("")
+  // const [task, setTask] = useState<string>("");
   const [task, setTask] = useState("");
 
   const handleChange = (
