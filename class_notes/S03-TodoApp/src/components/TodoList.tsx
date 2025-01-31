@@ -1,12 +1,15 @@
 import React from "react";
 import Grid from "@mui/material/Grid2";
 import { Typography } from "@mui/material";
+import TodoItem from "./TodoItem";
 
 interface ITodoListProps {
-  todos: ITodo;
+  todos: ITodo[];
 }
 
 const TodoList: React.FC<ITodoListProps> = ({ todos }) => {
+  const inProgressTodos = todos.filter((todo) => !todo.isDone);
+
   return (
     <Grid
       container
@@ -38,9 +41,15 @@ const TodoList: React.FC<ITodoListProps> = ({ todos }) => {
         >
           InProgress Todos
         </Typography>
-        <Typography color="error" mt={3}>
-          No InProgress Todos!
-        </Typography>
+        {inProgressTodos.length ? (
+          inProgressTodos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))
+        ) : (
+          <Typography color="error" mt={3}>
+            No InProgress Todos!
+          </Typography>
+        )}
       </Grid>
       <Grid
         size={{ xs: 12, sm: 8, md: 5 }}
